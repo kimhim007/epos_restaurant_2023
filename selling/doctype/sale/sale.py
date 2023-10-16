@@ -50,7 +50,6 @@ class Sale(Document):
 			frappe.throw(_("discount percent cannot greater than 100 percent"))
 
 		is_allow_user_edit_sale_after_close_working_day = frappe.db.get_single_value('ePOS Settings','allow_user_edit_sale')
-   
 		if is_allow_user_edit_sale_after_close_working_day != 1:
 			if self.docstatus ==0:
 				if self.working_day:
