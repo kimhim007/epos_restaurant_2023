@@ -1,0 +1,10 @@
+ePOS Restaurant
+Expense
+Purchasing
+Employee Management
+Selling
+Configuration
+Inventory
+ePOS Report
+Tour Managements
+Product Manager

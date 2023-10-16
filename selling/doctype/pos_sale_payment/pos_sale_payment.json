@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2022-12-12 11:53:54.361339",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_type",
+  "reference_no",
+  "input_amount",
+  "amount",
+  "currency",
+  "exchange_rate",
+  "currency_symbol",
+  "currency_precision",
+  "currency_format",
+  "is_foc",
+  "payment_type_group",
+  "room_number",
+  "folio_number",
+  "account_code",
+  "use_room_offline",
+  "fee_percentage",
+  "fee_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Payment Type",
+   "options": "Payment Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference No"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "input_amount",
+   "fieldtype": "Float",
+   "label": "Input Amount"
+  },
+  {
+   "fetch_from": "payment_type.currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fetch_from": "payment_type.exchange_rate",
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "precision": "9"
+  },
+  {
+   "fetch_from": "currency.symbol",
+   "fieldname": "currency_symbol",
+   "fieldtype": "Data",
+   "label": "Currency Symbol"
+  },
+  {
+   "fetch_from": "currency.currency_precision",
+   "fieldname": "currency_precision",
+   "fieldtype": "Int",
+   "label": "Currency Precision"
+  },
+  {
+   "fetch_from": "currency.pos_currency_format",
+   "fieldname": "currency_format",
+   "fieldtype": "Data",
+   "label": "Currency Format"
+  },
+  {
+   "default": "0",
+   "fetch_from": "payment_type.is_foc",
+   "fieldname": "is_foc",
+   "fieldtype": "Check",
+   "label": "Is FOC"
+  },
+  {
+   "fetch_from": "payment_type.payment_type_group",
+   "fieldname": "payment_type_group",
+   "fieldtype": "Data",
+   "label": "Payment Type Group"
+  },
+  {
+   "fieldname": "room_number",
+   "fieldtype": "Data",
+   "label": "Room Number"
+  },
+  {
+   "fieldname": "folio_number",
+   "fieldtype": "Data",
+   "label": "Folio Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_room_offline",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Use Room Offline"
+  },
+  {
+   "fieldname": "account_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Account Code"
+  },
+  {
+   "fieldname": "fee_percentage",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Fee Percentage"
+  },
+  {
+   "fieldname": "fee_amount",
+   "fieldtype": "Currency",
+   "label": "Fee Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-07 10:43:15.190512",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "POS Sale Payment",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

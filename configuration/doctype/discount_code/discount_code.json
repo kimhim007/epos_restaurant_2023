@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2022-12-09 09:53:34.767130",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "business_branch",
+  "discount_type",
+  "discount_code",
+  "discount_value"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "business_branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Business Branch",
+   "options": "Business Branch"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "discount_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Discount Code",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "discount_value",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Discount Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "discount_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Discount Type",
+   "options": "Percent\nAmount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-01 18:52:55.939002",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "Discount Code",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "discount_code"
+}

@@ -1,0 +1,651 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:product_code",
+ "creation": "2022-12-06 12:20:26.248323",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "photo",
+  "product_code",
+  "product_name_en",
+  "product_name_kh",
+  "product_category",
+  "product_group",
+  "revenue_group",
+  "is_inventory_product",
+  "is_combo_menu",
+  "is_recipe",
+  "column_break_6",
+  "kitchen_group",
+  "unit",
+  "unit_category",
+  "opening_quantity",
+  "stock_location",
+  "tax_rule",
+  "disabled",
+  "pos_setting_section",
+  "allow_discount",
+  "append_quantity",
+  "column_break_13",
+  "allow_free",
+  "is_require_employee",
+  "column_break_15",
+  "allow_change_price",
+  "delete_from_pos_require_password",
+  "column_break_17",
+  "is_open_product",
+  "pochasing_section",
+  "allow_purchase",
+  "cost",
+  "vendor",
+  "column_break_23",
+  "allow_sale",
+  "price",
+  "sort_order",
+  "product_printer_and_pos_menu_section",
+  "printers",
+  "column_break_26",
+  "pos_menus",
+  "section_break_33",
+  "note",
+  "product_price_tab",
+  "product_price",
+  "prices",
+  "modifiers_tab",
+  "product_modifiers",
+  "variant_tab",
+  "variant_options_section",
+  "variant_1_name",
+  "variant_1_value",
+  "column_break_47",
+  "variant_2_name",
+  "variant_2_value",
+  "column_break_50",
+  "variant_3_name",
+  "variant_3_value",
+  "section_break_50",
+  "generate_variant",
+  "product_variants_section",
+  "product_variants",
+  "recipe_tab",
+  "product_recipe",
+  "total_recipe_quantity",
+  "combo_menu_item_tab",
+  "use_combo_group",
+  "section_break_64",
+  "product_combo_menus",
+  "combo_menu_data",
+  "total_menu_item",
+  "combo_group_section",
+  "combo_groups",
+  "combo_group_data",
+  "produce_tab",
+  "produce_products",
+  "emenu_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "product_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Code",
+   "no_copy": 1,
+   "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "product_name_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Product Name En",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "product_name_kh",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Name Kh"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "product_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Product Category",
+   "options": "Product Category",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "product_category.revenue_group",
+   "fetch_if_empty": 1,
+   "fieldname": "revenue_group",
+   "fieldtype": "Link",
+   "label": "Revenue Group",
+   "options": "Revenue Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "kitchen_group",
+   "fieldtype": "Link",
+   "label": "Kitchen Group",
+   "options": "Kitchen Group"
+  },
+  {
+   "default": "Unit",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "Unit Of Measurement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pos_setting_section",
+   "fieldtype": "Section Break",
+   "label": "POS Setting"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_discount",
+   "fieldtype": "Check",
+   "label": "Allow Discount"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_free",
+   "fieldtype": "Check",
+   "label": "Allow Free"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_change_price",
+   "fieldtype": "Check",
+   "label": "Allow Change Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_open_product",
+   "fieldtype": "Check",
+   "label": "Is Open Product"
+  },
+  {
+   "fieldname": "pochasing_section",
+   "fieldtype": "Section Break",
+   "label": "Purchasing & Selling"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Vendor"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_combo_menu==0",
+   "fieldname": "is_inventory_product",
+   "fieldtype": "Check",
+   "label": "Is Inventory Product"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_purchase",
+   "fieldtype": "Check",
+   "label": "Allow Purchase"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_sale",
+   "fieldtype": "Check",
+   "label": "Allow Sale"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "product_printer_and_pos_menu_section",
+   "fieldtype": "Section Break",
+   "label": "Product Printer and POS Menu"
+  },
+  {
+   "fieldname": "printers",
+   "fieldtype": "Table",
+   "label": "Printers",
+   "options": "Product Printer"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pos_menus",
+   "fieldtype": "Table",
+   "label": "POS Menus",
+   "options": "Product Menu"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Photo"
+  },
+  {
+   "fetch_from": "unit.unit_category",
+   "fieldname": "unit_category",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Unit Category"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_inventory_product==1",
+   "fieldname": "opening_quantity",
+   "fieldtype": "Float",
+   "label": "Opening Quantity",
+   "set_only_once": 1
+  },
+  {
+   "depends_on": "eval:doc.is_inventory_product==1",
+   "fieldname": "stock_location",
+   "fieldtype": "Link",
+   "label": "Stock Location",
+   "options": "Stock Location",
+   "remember_last_selected_value": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "product_category.product_code_prefix",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "Series",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_combo_menu == 0",
+   "fieldname": "product_price_tab",
+   "fieldtype": "Tab Break",
+   "label": "Price"
+  },
+  {
+   "fieldname": "tax_rule",
+   "fieldtype": "Link",
+   "label": "Tax Rule",
+   "options": "Tax Rule"
+  },
+  {
+   "depends_on": "eval:doc.is_combo_menu == 0",
+   "fieldname": "modifiers_tab",
+   "fieldtype": "Tab Break",
+   "label": "Modifiers"
+  },
+  {
+   "fieldname": "product_modifiers",
+   "fieldtype": "Table",
+   "label": "Product Modifiers",
+   "options": "Modifiers"
+  },
+  {
+   "default": "1",
+   "fieldname": "append_quantity",
+   "fieldtype": "Check",
+   "label": "Append Quantity"
+  },
+  {
+   "depends_on": "eval:doc.is_combo_menu ==0 && doc.is_inventory_product == 1",
+   "fieldname": "variant_tab",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "Variant"
+  },
+  {
+   "fieldname": "variant_1_name",
+   "fieldtype": "Data",
+   "label": "Variant 1 Name"
+  },
+  {
+   "fieldname": "variant_1_value",
+   "fieldtype": "Table MultiSelect",
+   "label": "Variant 1 Value",
+   "options": "Variant Values"
+  },
+  {
+   "fieldname": "column_break_47",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "variant_2_name",
+   "fieldtype": "Data",
+   "label": "Variant 2 Name"
+  },
+  {
+   "fieldname": "variant_2_value",
+   "fieldtype": "Table MultiSelect",
+   "label": "Variant 2 Value",
+   "options": "Variant Values"
+  },
+  {
+   "fieldname": "section_break_50",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "generate_variant",
+   "fieldtype": "Button",
+   "label": "Generate"
+  },
+  {
+   "fieldname": "column_break_50",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "variant_3_name",
+   "fieldtype": "Data",
+   "label": "Variant 3 Name"
+  },
+  {
+   "fieldname": "variant_3_value",
+   "fieldtype": "Table MultiSelect",
+   "label": "Variant 3 Value",
+   "options": "Variant Values"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "variant_options_section",
+   "fieldtype": "Section Break",
+   "label": "Variant Options"
+  },
+  {
+   "fieldname": "product_variants_section",
+   "fieldtype": "Section Break",
+   "label": "Product Variants"
+  },
+  {
+   "fieldname": "product_variants",
+   "fieldtype": "Table",
+   "options": "Product Variants"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_combo_menu == 0",
+   "fieldname": "is_recipe",
+   "fieldtype": "Check",
+   "label": "Is Recipe"
+  },
+  {
+   "depends_on": "eval:doc.is_inventory_product==0 && doc.is_recipe==0 && !doc.__islocal && doc.is_combo_menu == 0",
+   "fieldname": "recipe_tab",
+   "fieldtype": "Tab Break",
+   "label": "Recipe"
+  },
+  {
+   "fieldname": "product_recipe",
+   "fieldtype": "Table",
+   "label": "Product Recipe",
+   "options": "Product Recipe"
+  },
+  {
+   "depends_on": "eval:doc.is_combo_menu==1 && doc.is_inventory_product==0 && !doc.__islocal",
+   "fieldname": "combo_menu_item_tab",
+   "fieldtype": "Tab Break",
+   "label": "Combo Menu Item"
+  },
+  {
+   "fieldname": "total_menu_item",
+   "fieldtype": "Int",
+   "label": "Total Menu Item"
+  },
+  {
+   "fieldname": "emenu_section",
+   "fieldtype": "Tab Break",
+   "label": "eMenu"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "depends_on": "eval:doc.is_combo_menu ==0",
+   "fieldname": "produce_tab",
+   "fieldtype": "Tab Break",
+   "label": "Production"
+  },
+  {
+   "fieldname": "produce_products",
+   "fieldtype": "Table",
+   "label": "Production Ingredients",
+   "options": "Template Production Ingredients"
+  },
+  {
+   "fieldname": "total_recipe_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity"
+  },
+  {
+   "fieldname": "product_combo_menus",
+   "fieldtype": "Table",
+   "label": "Products",
+   "options": "Product Combo Menu"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_combo_group",
+   "fieldtype": "Check",
+   "label": "Use Combo Group"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_combo_menu",
+   "fieldtype": "Check",
+   "label": "Is Combo Menu"
+  },
+  {
+   "depends_on": "eval:doc.use_combo_group ==0",
+   "fieldname": "section_break_64",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.use_combo_group == 1",
+   "fieldname": "combo_group_section",
+   "fieldtype": "Section Break",
+   "label": "Combo Group"
+  },
+  {
+   "fieldname": "combo_groups",
+   "fieldtype": "Table",
+   "options": "Product Combo Group"
+  },
+  {
+   "fieldname": "combo_menu_data",
+   "fieldtype": "JSON",
+   "hidden": 1,
+   "label": "Combo Menu Data"
+  },
+  {
+   "fieldname": "combo_group_data",
+   "fieldtype": "JSON",
+   "hidden": 1,
+   "label": "Combo Group Data"
+  },
+  {
+   "fieldname": "prices",
+   "fieldtype": "JSON",
+   "hidden": 1,
+   "label": "Prices"
+  },
+  {
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order"
+  },
+  {
+   "fieldname": "product_price",
+   "fieldtype": "Table",
+   "label": "Product Price",
+   "options": "Product Price"
+  },
+  {
+   "fetch_from": "product_category.parent_product_category",
+   "fieldname": "product_group",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Product Group"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_require_employee",
+   "fieldtype": "Check",
+   "label": "Is Require Employee"
+  },
+  {
+   "default": "0",
+   "fieldname": "delete_from_pos_require_password",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Delete from POS Require Password"
+  }
+ ],
+ "image_field": "photo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2023-08-25 09:44:15.558371",
+ "modified_by": "Administrator",
+ "module": "Inventory",
+ "name": "Product",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Product Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "product_code, product_name_en, product_category",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

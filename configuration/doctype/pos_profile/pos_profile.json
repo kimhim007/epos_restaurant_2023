@@ -1,0 +1,255 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:pos_profile_name",
+ "creation": "2022-12-07 16:09:55.184483",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "business_branch",
+  "pos_profile_name",
+  "outlet",
+  "stock_location",
+  "max_cashier_shift",
+  "is_edoor_profile",
+  "column_break_5",
+  "price_rule",
+  "tax_rule",
+  "default_pos_menu",
+  "default_sale_type",
+  "column_break_12",
+  "pos_config",
+  "pos_branding",
+  "waiting_number_prefix",
+  "reset_waiting_number_after",
+  "section_break_15",
+  "pos_profile_tax_rule",
+  "section_break_10",
+  "pos_menus",
+  "table_groups_section",
+  "table_groups",
+  "section_break_16",
+  "receipt_setting",
+  "default_payment_type",
+  "second_currency_payment_type",
+  "section_break_lxjs",
+  "default_customer",
+  "default_pos_receipt"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
+   "fieldname": "pos_profile_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "POS Profile Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "business_branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Business Branch",
+   "options": "Business Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "label": "Outlet",
+   "options": "Outlet",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price_rule",
+   "fieldtype": "Link",
+   "label": "Price Rule",
+   "options": "Price Rule",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stock_location",
+   "fieldtype": "Link",
+   "label": "Stock Location",
+   "options": "Stock Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tax_rule",
+   "fieldtype": "Link",
+   "label": "Tax Rule",
+   "options": "Tax Rule"
+  },
+  {
+   "fieldname": "pos_config",
+   "fieldtype": "Link",
+   "label": "POS Config",
+   "options": "POS Config",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pos_menus",
+   "fieldtype": "Table",
+   "label": "POS Menus",
+   "options": "POS Profile Root Menu"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_pos_menu",
+   "fieldtype": "Link",
+   "label": "Default POS Menu",
+   "options": "POS Menu"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "default_customer",
+   "fieldtype": "Link",
+   "label": "Default Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_sale_type",
+   "fieldtype": "Link",
+   "label": "Default Sale Type",
+   "options": "Sale Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_payment_type",
+   "fieldtype": "Link",
+   "label": "Default Payment Type",
+   "options": "Payment Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "second_currency_payment_type",
+   "fieldtype": "Link",
+   "label": "Second Currency Payment Type",
+   "options": "Payment Type"
+  },
+  {
+   "fieldname": "pos_branding",
+   "fieldtype": "Link",
+   "label": "POS Branding",
+   "options": "POS Branding",
+   "reqd": 1
+  },
+  {
+   "fieldname": "table_groups_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_groups",
+   "fieldtype": "Table",
+   "label": "Table Group",
+   "options": "POS Table Group"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "WN.-.####",
+   "fieldname": "waiting_number_prefix",
+   "fieldtype": "Data",
+   "label": "Waiting Number Prefix"
+  },
+  {
+   "default": "Close Working Day",
+   "fieldname": "reset_waiting_number_after",
+   "fieldtype": "Select",
+   "label": "Reset Waiting Number After",
+   "options": "Close Cashier Shift\nClose Working Day"
+  },
+  {
+   "fieldname": "pos_profile_tax_rule",
+   "fieldtype": "Table",
+   "label": "POS Profile Tax Rule",
+   "options": "POS Profile Tax Rule"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "max_cashier_shift",
+   "fieldtype": "Int",
+   "label": "Max Cashier Shift"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_edoor_profile",
+   "fieldtype": "Check",
+   "label": "Is eDoor Profile"
+  },
+  {
+   "fieldname": "section_break_lxjs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "receipt_setting",
+   "fieldtype": "Table",
+   "label": "Receipt Setting",
+   "options": "POS Receipt Setting"
+  },
+  {
+   "fieldname": "default_pos_receipt",
+   "fieldtype": "Link",
+   "label": "Default POS Receipt",
+   "options": "Print Format",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-27 17:57:20.714283",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "POS Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Guest"
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,33 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2023-02-21 22:45:09.459948",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "table_group"
+ ],
+ "fields": [
+  {
+   "fieldname": "table_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Table Group",
+   "options": "Table Group"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-21 22:54:09.694490",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "POS Table Group",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

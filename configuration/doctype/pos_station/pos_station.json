@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:station_name",
+ "creation": "2023-05-19 09:33:59.683972",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "station_name",
+  "station_device_printing",
+  "is_order_station",
+  "show_button_print_bill",
+  "show_button_cancel_print_bill",
+  "show_start_close_working_day",
+  "show_start_close_cashier_shift",
+  "show_option_payment",
+  "show_sale_more_action_menu",
+  "show_reference_button_in_more_menu",
+  "show_button_customer_display",
+  "show_button_commission",
+  "show_button_change_price_on_order_station",
+  "show_keypad_in_sale_screen",
+  "show_deleted_sale_product_in_sale_screen",
+  "is_used",
+  "show_button_change_sale_type",
+  "show_setting_menu"
+ ],
+ "fields": [
+  {
+   "fieldname": "station_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Station Name",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_order_station",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Order Station"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_start_close_working_day",
+   "fieldtype": "Check",
+   "label": "Show option start/close working day"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_start_close_cashier_shift",
+   "fieldtype": "Check",
+   "label": "Show option start/close cashier shift"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_option_payment",
+   "fieldtype": "Check",
+   "label": "Show Option Payment"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_used",
+   "fieldtype": "Check",
+   "label": "Is Used"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_sale_more_action_menu",
+   "fieldtype": "Check",
+   "label": "Show Sale More Action Menu"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_reference_button_in_more_menu",
+   "fieldtype": "Check",
+   "label": "Show Reference Button in More Menu"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_button_print_bill",
+   "fieldtype": "Check",
+   "label": "Show Button Print Bill"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_button_cancel_print_bill",
+   "fieldtype": "Check",
+   "label": "Show Button Cancel Print Bill"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_button_customer_display",
+   "fieldtype": "Check",
+   "label": "Show Button Customer Display"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_button_commission",
+   "fieldtype": "Check",
+   "label": "Show Button Commission"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_button_change_price_on_order_station",
+   "fieldtype": "Check",
+   "label": "Show Button Change Price on Order Station"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_keypad_in_sale_screen",
+   "fieldtype": "Check",
+   "label": "Show Keypad in Sale Screen"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_deleted_sale_product_in_sale_screen",
+   "fieldtype": "Check",
+   "label": "Show Deleted Sale Product In Sale Screen"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_button_change_sale_type",
+   "fieldtype": "Check",
+   "label": "Show button change sale type"
+  },
+  {
+   "fieldname": "station_device_printing",
+   "fieldtype": "Data",
+   "label": "Station Device Printing"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_setting_menu",
+   "fieldtype": "Check",
+   "label": "Show Setting Menu"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-19 14:43:18.717551",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "POS Station",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

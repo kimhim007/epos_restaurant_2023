@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:pos_user_permission",
+ "creation": "2023-01-30 20:44:44.609499",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pos_user_permission",
+  "section_break_2",
+  "make_order",
+  "delete_bill",
+  "edit_closed_receipt",
+  "cancel_print_bill",
+  "discount_sale",
+  "column_break_6",
+  "free_item",
+  "change_item_price",
+  "delete_item",
+  "discount_item",
+  "change_tax_setting",
+  "reset_custom_bill_number_counter",
+  "column_break_13",
+  "open_cashdrawer",
+  "start_working_day",
+  "close_working_day",
+  "start_cashier_shift",
+  "close_cashier_shift",
+  "cash_in_check_out",
+  "section_break_7",
+  "discount_codes"
+ ],
+ "fields": [
+  {
+   "fieldname": "pos_user_permission",
+   "fieldtype": "Data",
+   "label": "POS User Permission",
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "cancel_print_bill",
+   "fieldtype": "Check",
+   "label": "Cancel Print Bill"
+  },
+  {
+   "default": "1",
+   "fieldname": "free_item",
+   "fieldtype": "Check",
+   "label": "Free Item"
+  },
+  {
+   "default": "1",
+   "fieldname": "change_item_price",
+   "fieldtype": "Check",
+   "label": "Change Item Price"
+  },
+  {
+   "default": "1",
+   "fieldname": "delete_item",
+   "fieldtype": "Check",
+   "label": "Delete Item"
+  },
+  {
+   "default": "1",
+   "fieldname": "discount_item",
+   "fieldtype": "Check",
+   "label": "Discount Item"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discount_codes",
+   "fieldtype": "Table",
+   "label": "Discount Codes",
+   "options": "Discount Code"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_sale",
+   "fieldtype": "Check",
+   "label": "Discount Sale"
+  },
+  {
+   "default": "1",
+   "fieldname": "make_order",
+   "fieldtype": "Check",
+   "label": "Make Order"
+  },
+  {
+   "default": "1",
+   "fieldname": "open_cashdrawer",
+   "fieldtype": "Check",
+   "label": "Open Cashdrawer"
+  },
+  {
+   "default": "1",
+   "fieldname": "delete_bill",
+   "fieldtype": "Check",
+   "label": "Delete Bill"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "edit_closed_receipt",
+   "fieldtype": "Check",
+   "label": "Edit Closed Receipt"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "start_working_day",
+   "fieldtype": "Check",
+   "label": "Start Working Day"
+  },
+  {
+   "default": "1",
+   "fieldname": "close_working_day",
+   "fieldtype": "Check",
+   "label": "Close Working Day"
+  },
+  {
+   "default": "1",
+   "fieldname": "start_cashier_shift",
+   "fieldtype": "Check",
+   "label": "Start Cashier Shift"
+  },
+  {
+   "default": "1",
+   "fieldname": "close_cashier_shift",
+   "fieldtype": "Check",
+   "label": "Close Cashier Shift"
+  },
+  {
+   "default": "0",
+   "fieldname": "cash_in_check_out",
+   "fieldtype": "Check",
+   "label": "Cash In & Cash Out"
+  },
+  {
+   "default": "0",
+   "fieldname": "change_tax_setting",
+   "fieldtype": "Check",
+   "label": "Change Tax Setting"
+  },
+  {
+   "default": "0",
+   "fieldname": "reset_custom_bill_number_counter",
+   "fieldtype": "Check",
+   "label": "Reset Custom Bill Number Counter"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-09 11:20:28.744964",
+ "modified_by": "Administrator",
+ "module": "ePOS Restaurant",
+ "name": "POS User Permission",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

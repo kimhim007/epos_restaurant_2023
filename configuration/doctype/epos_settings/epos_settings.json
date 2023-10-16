@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-12-17 17:50:12.752181",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "epos_app_name",
+  "epos_logo",
+  "section_break_6",
+  "tax_1_name",
+  "tax_2_name",
+  "tax_3_name",
+  "backend_port",
+  "changed_payment_type",
+  "country",
+  "default_table_number_background_color",
+  "specific_business_branch",
+  "specific_pos_profile",
+  "allow_user_edit_sale",
+  "number_of_day_cashier_can_view_report",
+  "number_and_currency_setting_tab",
+  "currency",
+  "exchange_rate_main_currency",
+  "column_break_wqic",
+  "second_currency",
+  "emenu_tab",
+  "emenu"
+ ],
+ "fields": [
+  {
+   "fieldname": "tax_1_name",
+   "fieldtype": "Data",
+   "label": "Tax 1 Name"
+  },
+  {
+   "fieldname": "tax_2_name",
+   "fieldtype": "Data",
+   "label": "Tax 2 Name"
+  },
+  {
+   "fieldname": "tax_3_name",
+   "fieldtype": "Data",
+   "label": "Tax 3 Name"
+  },
+  {
+   "fieldname": "changed_payment_type",
+   "fieldtype": "Link",
+   "label": "Changed Payment Type",
+   "options": "Payment Type"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Default Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "epos_app_name",
+   "fieldtype": "Data",
+   "label": "App Name"
+  },
+  {
+   "fieldname": "epos_logo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Logo"
+  },
+  {
+   "fieldname": "default_table_number_background_color",
+   "fieldtype": "Color",
+   "label": "Default Table Number Background Color"
+  },
+  {
+   "default": "7",
+   "fieldname": "number_of_day_cashier_can_view_report",
+   "fieldtype": "Int",
+   "label": "Number of Day Cashier Can View Report"
+  },
+  {
+   "default": "0",
+   "description": "See only own branch",
+   "fieldname": "specific_business_branch",
+   "fieldtype": "Check",
+   "label": "Specific Business Branch"
+  },
+  {
+   "default": "0",
+   "description": "See only own pos profile",
+   "fieldname": "specific_pos_profile",
+   "fieldtype": "Check",
+   "label": "Specific POS Profile"
+  },
+  {
+   "fieldname": "emenu_tab",
+   "fieldtype": "Tab Break",
+   "label": "eMenu"
+  },
+  {
+   "fieldname": "emenu",
+   "fieldtype": "Table",
+   "options": "POS eMenu"
+  },
+  {
+   "default": "1213",
+   "fieldname": "backend_port",
+   "fieldtype": "Data",
+   "label": "Backend Port"
+  },
+  {
+   "fieldname": "number_and_currency_setting_tab",
+   "fieldtype": "Tab Break",
+   "label": "Currency Setting"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "exchange_rate_main_currency",
+   "fieldtype": "Link",
+   "label": "Exchange Rate Main Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_wqic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "second_currency",
+   "fieldtype": "Link",
+   "label": "Second Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_user_edit_sale",
+   "fieldtype": "Check",
+   "label": "Allow User Edit Sale After Closed Working Day"
+  }
+ ],
+ "image_field": "epos_logo",
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2023-10-16 16:44:02.517288",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "ePOS Settings",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

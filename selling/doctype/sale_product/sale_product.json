@@ -1,0 +1,782 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2022-12-05 16:45:38.860091",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "product_code",
+  "product_name",
+  "product_name_kh",
+  "portion",
+  "column_break_4",
+  "product_group",
+  "product_category",
+  "revenue_group",
+  "kitchen_group",
+  "column_break_9",
+  "unit",
+  "base_unit",
+  "base_price",
+  "product_tax_rule",
+  "batch_no",
+  "section_break_9",
+  "quantity",
+  "deleted_quantity",
+  "column_break_11",
+  "price",
+  "modifiers_price",
+  "column_break_13",
+  "sub_total",
+  "column_break_16",
+  "amount",
+  "discount_section",
+  "discount_type",
+  "happy_hour_promotion",
+  "sale_discount_percent",
+  "column_break_18",
+  "discount",
+  "happy_hours_promotion_title",
+  "sale_discount_amount",
+  "column_break_20",
+  "discount_amount",
+  "total_discount",
+  "discount_note",
+  "tax_tab",
+  "tax_rule",
+  "column_break_30",
+  "total_tax",
+  "tax_1_section",
+  "tax_1_rate",
+  "percentage_of_price_to_calculate_tax_1",
+  "calculate_tax_1_after_discount",
+  "column_break_32",
+  "taxable_amount_1",
+  "column_break_34",
+  "tax_1_amount",
+  "section_break_15",
+  "tax_2_rate",
+  "percentage_of_price_to_calculate_tax_2",
+  "calculate_tax_2_after_discount",
+  "calculate_tax_2_after_adding_tax_1",
+  "column_break_40",
+  "taxable_amount_2",
+  "column_break_42",
+  "tax_2_amount",
+  "section_break_44",
+  "tax_3_rate",
+  "percentage_of_price_to_calculate_tax_3",
+  "calculate_tax_3_after_discount",
+  "calculate_tax_3_after_adding_tax_1",
+  "calculate_tax_3_after_adding_tax_2",
+  "column_break_49",
+  "taxable_amount_3",
+  "column_break_51",
+  "tax_3_amount",
+  "section_break_62",
+  "total_revenue",
+  "section_break_54",
+  "allow_discount",
+  "allow_free",
+  "allow_change_price",
+  "is_inventory_product",
+  "append_quantity",
+  "cost",
+  "product_photo",
+  "note",
+  "modifiers",
+  "modifiers_data",
+  "is_free",
+  "backup_product_price",
+  "backup_modifier_price",
+  "free_note",
+  "change_tax_setting_note",
+  "sale_product_status",
+  "menu_product_name",
+  "seat_number",
+  "change_price_note",
+  "delete_item_note",
+  "order_by",
+  "order_time",
+  "printers",
+  "is_combo_menu",
+  "use_combo_group",
+  "combo_menu",
+  "combo_menu_data",
+  "revenue_code",
+  "account_code",
+  "tax_1_account",
+  "discount_account",
+  "tax_2_account",
+  "tax_3_account",
+  "is_require_employee",
+  "employees",
+  "delete_from_pos_require_password"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product Code",
+   "options": "Product",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "product_code.product_name_en",
+   "fetch_if_empty": 1,
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Name"
+  },
+  {
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "product_code.product_name_kh",
+   "fieldname": "product_name_kh",
+   "fieldtype": "Data",
+   "label": "Product Name Kh"
+  },
+  {
+   "fetch_from": "product_code.product_category",
+   "fieldname": "product_category",
+   "fieldtype": "Link",
+   "label": "Product Category",
+   "options": "Product Category"
+  },
+  {
+   "fetch_from": "product_category.parent_product_category",
+   "fieldname": "product_group",
+   "fieldtype": "Data",
+   "label": "Product Group"
+  },
+  {
+   "fetch_from": "product_code.revenue_group",
+   "fieldname": "revenue_group",
+   "fieldtype": "Data",
+   "label": "Revenue Group"
+  },
+  {
+   "fetch_from": "product_code.kitchen_group",
+   "fieldname": "kitchen_group",
+   "fieldtype": "Data",
+   "label": "Kitchen Group"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.allow_discount",
+   "fieldname": "allow_discount",
+   "fieldtype": "Check",
+   "label": "Allow Discount"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.allow_free",
+   "fieldname": "allow_free",
+   "fieldtype": "Check",
+   "label": "Allow Free"
+  },
+  {
+   "fetch_from": "product_code.unit",
+   "fetch_if_empty": 1,
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "Unit Of Measurement"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.allow_change_price",
+   "fieldname": "allow_change_price",
+   "fieldtype": "Check",
+   "label": "Allow Change Price"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.is_inventory_product",
+   "fieldname": "is_inventory_product",
+   "fieldtype": "Check",
+   "label": "Is Inventory Product"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.tax_rule",
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Tax 2"
+  },
+  {
+   "depends_on": "eval:doc.allow_discount === 1",
+   "fieldname": "discount_section",
+   "fieldtype": "Section Break",
+   "label": "Discount"
+  },
+  {
+   "default": "Percent",
+   "fieldname": "discount_type",
+   "fieldtype": "Select",
+   "label": "Discount Type",
+   "options": "Percent\nAmount"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount"
+  },
+  {
+   "default": "0",
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sub_total",
+   "fieldtype": "Currency",
+   "label": "Sub Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "base_price",
+   "fieldtype": "Currency",
+   "label": "Base Price",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "product_code.unit",
+   "fieldname": "base_unit",
+   "fieldtype": "Data",
+   "label": "Base Unit"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "tax_tab",
+   "fieldtype": "Section Break",
+   "label": "Tax"
+  },
+  {
+   "depends_on": "eval:(doc.tax_rule && doc.tax_1_rate>0)",
+   "fieldname": "tax_1_section",
+   "fieldtype": "Section Break",
+   "label": "Tax 1"
+  },
+  {
+   "fetch_from": "tax_rule.tax_1_rate",
+   "fieldname": "tax_1_rate",
+   "fieldtype": "Float",
+   "label": "Tax 1 Rate",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "product_code.tax_rule",
+   "fetch_if_empty": 1,
+   "fieldname": "tax_rule",
+   "fieldtype": "Link",
+   "label": "Tax Rule",
+   "options": "Tax Rule"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fetch_from": "tax_rule.calculate_tax_1_after_discount",
+   "fieldname": "calculate_tax_1_after_discount",
+   "fieldtype": "Check",
+   "label": "Calculate Tax 1 After Discount"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable_amount_1",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount 1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_1_amount",
+   "fieldtype": "Currency",
+   "label": "Tax 1 Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "tax_rule.tax_2_rate",
+   "fieldname": "tax_2_rate",
+   "fieldtype": "Float",
+   "label": "Tax 2 Rate"
+  },
+  {
+   "default": "1",
+   "fetch_from": "tax_rule.calculate_tax_2_after_discount",
+   "fieldname": "calculate_tax_2_after_discount",
+   "fieldtype": "Check",
+   "label": "Calculate Tax 2 After Discount"
+  },
+  {
+   "default": "1",
+   "fetch_from": "tax_rule.calculate_tax_2_after_adding_tax_1",
+   "fieldname": "calculate_tax_2_after_adding_tax_1",
+   "fieldtype": "Check",
+   "label": "Calculate Tax 2 After Adding Tax 1"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable_amount_2",
+   "fieldtype": "Float",
+   "label": "Taxable Amount 2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_2_amount",
+   "fieldtype": "Currency",
+   "label": "Tax 2 Amount",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.tax_rule",
+   "fieldname": "section_break_44",
+   "fieldtype": "Section Break",
+   "label": "Tax 3"
+  },
+  {
+   "default": "0",
+   "fetch_from": "tax_rule.tax_3_rate",
+   "fieldname": "tax_3_rate",
+   "fieldtype": "Float",
+   "label": "Tax 3 Rate"
+  },
+  {
+   "default": "1",
+   "fetch_from": "tax_rule.calculate_tax_3_after_discount",
+   "fieldname": "calculate_tax_3_after_discount",
+   "fieldtype": "Check",
+   "label": "Calculate Tax 3 After Discount"
+  },
+  {
+   "default": "1",
+   "fetch_from": "tax_rule.calculate_tax_3_after_adding_tax_1",
+   "fieldname": "calculate_tax_3_after_adding_tax_1",
+   "fieldtype": "Check",
+   "label": "Calculate Tax 3 After Adding Tax 1"
+  },
+  {
+   "default": "1",
+   "fetch_from": "tax_rule.calculate_tax_3_after_adding_tax_2",
+   "fieldname": "calculate_tax_3_after_adding_tax_2",
+   "fieldtype": "Check",
+   "label": "Calculate Tax 3 After Adding Tax 2"
+  },
+  {
+   "fieldname": "column_break_49",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable_amount_3",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount 3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_51",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_54",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "product_code.tax_rule",
+   "fetch_if_empty": 1,
+   "fieldname": "product_tax_rule",
+   "fieldtype": "Link",
+   "label": "Product Tax Rule",
+   "options": "Tax Rule"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_tax",
+   "fieldtype": "Currency",
+   "label": "Total Tax",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_3_amount",
+   "fieldtype": "Currency",
+   "label": "Tax 3 Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sale_discount_percent",
+   "fieldtype": "Float",
+   "label": "Sale Discount Percent",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sale_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Sale Discount Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "label": "Total Discount",
+   "read_only": 1
+  },
+  {
+   "default": "Normal",
+   "fieldname": "portion",
+   "fieldtype": "Data",
+   "label": "Portion"
+  },
+  {
+   "fetch_from": "product_code.photo",
+   "fieldname": "product_photo",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Product Photo"
+  },
+  {
+   "default": "1",
+   "fetch_from": "product_code.append_quantity",
+   "fieldname": "append_quantity",
+   "fieldtype": "Check",
+   "label": "Append Quantity"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "label": "Note"
+  },
+  {
+   "fieldname": "modifiers",
+   "fieldtype": "Small Text",
+   "label": "Modifiers"
+  },
+  {
+   "fieldname": "modifiers_data",
+   "fieldtype": "JSON",
+   "hidden": 1,
+   "label": "Modifiers Data"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_free",
+   "fieldtype": "Check",
+   "label": "Is Free"
+  },
+  {
+   "fieldname": "sale_product_status",
+   "fieldtype": "Data",
+   "label": "Sale Product Status"
+  },
+  {
+   "default": "0",
+   "fieldname": "modifiers_price",
+   "fieldtype": "Currency",
+   "label": "Modifiers Price"
+  },
+  {
+   "fieldname": "menu_product_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Menu Product Name"
+  },
+  {
+   "fieldname": "backup_product_price",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Backup Product Price"
+  },
+  {
+   "fieldname": "backup_modifier_price",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Backup Modifier Price"
+  },
+  {
+   "fieldname": "free_note",
+   "fieldtype": "Data",
+   "label": "Free Note"
+  },
+  {
+   "fieldname": "seat_number",
+   "fieldtype": "Data",
+   "label": "Seat Number"
+  },
+  {
+   "fieldname": "change_price_note",
+   "fieldtype": "Data",
+   "label": "Change Price Note"
+  },
+  {
+   "fieldname": "delete_item_note",
+   "fieldtype": "Data",
+   "label": "Delete Item Note"
+  },
+  {
+   "fieldname": "discount_note",
+   "fieldtype": "Data",
+   "label": "Discount Note"
+  },
+  {
+   "fieldname": "order_by",
+   "fieldtype": "Data",
+   "label": "Order By"
+  },
+  {
+   "fieldname": "order_time",
+   "fieldtype": "Datetime",
+   "label": "Order Time"
+  },
+  {
+   "fieldname": "printers",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Product Printers"
+  },
+  {
+   "fieldname": "section_break_62",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "label": "Total Revenue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "happy_hour_promotion",
+   "fieldtype": "Link",
+   "label": "Happy Hours Promotion",
+   "options": "Happy Hours Promotion"
+  },
+  {
+   "fetch_from": "happy_hour_promotion.promotion_name",
+   "fieldname": "happy_hours_promotion_title",
+   "fieldtype": "Data",
+   "label": "Happy Hours Promotion Title"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_combo_menu",
+   "fieldtype": "Check",
+   "label": "Is Combo Menu"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_combo_group",
+   "fieldtype": "Check",
+   "label": "Use Combo Group"
+  },
+  {
+   "fieldname": "combo_menu_data",
+   "fieldtype": "JSON",
+   "hidden": 1,
+   "label": "Combo Menu Data"
+  },
+  {
+   "fieldname": "combo_menu",
+   "fieldtype": "Small Text",
+   "label": "Combo Menu",
+   "read_only": 1
+  },
+  {
+   "default": "100",
+   "fieldname": "percentage_of_price_to_calculate_tax_1",
+   "fieldtype": "Float",
+   "label": "Percentage of Price to Calculate Tax 1"
+  },
+  {
+   "default": "100",
+   "fieldname": "percentage_of_price_to_calculate_tax_2",
+   "fieldtype": "Float",
+   "label": "Percentage of Price to Calculate Tax 2"
+  },
+  {
+   "default": "100",
+   "fieldname": "percentage_of_price_to_calculate_tax_3",
+   "fieldtype": "Float",
+   "label": "Percentage of Price to Calculate Tax 3"
+  },
+  {
+   "fieldname": "change_tax_setting_note",
+   "fieldtype": "Data",
+   "label": "Change Tax Setting Note"
+  },
+  {
+   "default": "0",
+   "fieldname": "deleted_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Deleted Quantity"
+  },
+  {
+   "fieldname": "revenue_code",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Revenue Code",
+   "options": "Revenue Code"
+  },
+  {
+   "fetch_from": "revenue_code.account_code",
+   "fieldname": "account_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Account Code"
+  },
+  {
+   "fetch_from": "revenue_code.tax_1_account",
+   "fieldname": "tax_1_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Tax 1 Account"
+  },
+  {
+   "fetch_from": "revenue_code.tax_2_account",
+   "fieldname": "tax_2_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Tax 2 Account"
+  },
+  {
+   "fetch_from": "revenue_code.tax_3_account",
+   "fieldname": "tax_3_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Tax 3 Account"
+  },
+  {
+   "fetch_from": "revenue_code.discount_account",
+   "fieldname": "discount_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Discount Account"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_require_employee",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is Require Employee"
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "JSON",
+   "label": "Employees"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.delete_from_pos_require_password",
+   "fieldname": "delete_from_pos_require_password",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Delete from POS Require Password"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch No",
+   "options": "Batch Number"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-25 10:28:22.478578",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "Sale Product",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

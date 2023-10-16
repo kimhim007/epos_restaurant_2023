@@ -1,0 +1,128 @@
+
+<h1 style="text-align: center">Banteay Sora 5.0</h1>
+<p style="text-align: center;font-size: 22px;">Vendor Balance Detail Report</p>
+<h5>
+    {% 
+        if (filters.business_branch != "") { %}
+        <span class="text-right text-muted">
+            Branch:
+        </span>
+             {%= filters.business_branch %}
+        {% }
+    %}
+    {% 
+        if (filters.vendor != "") { %}
+        <span class="text-right text-muted">
+            Vendor:
+        </span>
+             {%= filters.vendor %}
+        {% }
+    %}
+    {% 
+        if (filters.start_date != "") { %}
+        <span class="text-right text-muted">
+            Date:
+        </span>
+        {%= filters.start_date  %} to {%= filters.end_date %}
+        {% }
+    %}
+</h5>
+{% main_currency = frappe.db.get_single_value('ePOS Settings','currency') %}
+{%console.log(main_currency)%}
+<hr/>
+<div style="text-align: center; margin-bottom: 14px;">
+<table class="report-list" style="width: 100%;">
+    <thead>
+        <tr style="border-bottom: solid 1px black!important; background-color: rgb(216, 216, 216); font-size: 16px;">
+            <th class="text-left">{%= __("Transaction #") %}</th>
+            <th class="text-left">{%= __("Ref. #") %}</th>
+            <th class="text-center">{%= __("Date") %}</th>
+            <th class="text-center">{%= __("Transaction Type") %}</th>
+            <th class="text-right">{%= __("Beginning Balance") %}</th>
+            <th class="text-right">{%= __("Operation Balance") %}</th>
+            <th class="text-right">{%= __("Last Balance") %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in data%}
+            <tr>
+                {% if d.indent == 0%}
+                    <td class="text-left" style="font-weight: bold; font-size: 14px; padding-left: 14px !important;">
+                        {{d.transaction_number}}
+                    </td>
+                {% else %}
+                    <td class="text-left" style="font-size: 14px; padding-left: 30px !important;">
+                        {{d.transaction_number}}
+                    </td>
+                {% endif %}
+                <td class="text-left" style="font-size: 14px; padding-left: 14px !important;">
+                    {{d.reference_number}}
+                </td>
+                <td class="text-center" style="font-size: 14px; padding-left: 14px !important;">
+                    {{d.transaction_date}}
+                </td>
+                <td class="text-center" style="font-size: 14px; padding-left: 14px !important;">
+                    {{d.transaction_type}}
+                </td>
+
+                {% if d.indent == 0%}
+                    <td class="text-right" style="font-weight: bold;font-size: 14px; padding-left: 14px !important;">
+                        {{main_currency.PromiseResult}}
+                        {{ format_currency(d.begining_balance, 'USD', 2) }}
+                    </td>
+                {% else %}
+                    <td class="text-right" style="font-size: 14px; padding-left: 14px !important;">
+                        {{main_currency.PromiseResult}}
+                        {{ format_currency(d.begining_balance, 'USD', 2) }}
+                    </td>
+                {% endif %}
+
+                {% if d.indent == 0%}
+                    <td class="text-right" style="font-weight: bold;font-size: 14px; padding-left: 14px !important;">
+                        {{ format_currency(d.operation_balance, 'USD', 2) }}
+                    </td>
+                {% else %}
+                    <td class="text-right" style="font-size: 14px; padding-left: 14px !important;">
+                        {{ format_currency(d.operation_balance, 'USD', 2) }}
+                    </td>
+                {% endif %}
+                
+                {% if d.indent == 0%}
+                    <td class="text-right" style="font-weight: bold;font-size: 14px; padding-left: 14px !important;">
+                        {{ format_currency(d.last_balance, 'USD', 2) }}
+                    </td>
+                {% else %}
+                    <td class="text-right" style="font-size: 14px; padding-left: 14px !important;">
+                        {{ format_currency(d.last_balance, 'USD', 2) }}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div style="display: grid;grid-template-columns: auto auto auto;padding-top: 50px;">
+    <div style="padding: 14px;font-size: 18px;text-align: center;">Prepared By</div>
+    <div style="padding: 14px;font-size: 18px;text-align: center;">Checked By</div>
+    <div style="padding: 14px;font-size: 18px;text-align: center;">Approved By</div>
+    <div style="padding: 14px;font-size: 18px;text-align: center;">..................</div>
+    <div style="padding: 14px;font-size: 18px;text-align: center;">..................</div>
+    <div style="padding: 14px;font-size: 18px;text-align: center;">..................</div>
+  </div>
+
+<p style="font-size: 13px;" class="text-right text-muted">
+    Printed by: {%= frappe.user.name%} on {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %} 
+</p>
+
+<style media="print">
+    .print-format {
+        padding: 2mm;
+        font-size: 8.0pt !important;
+    }
+    .print-format .table-bordered td, .print-format .table-bordered th{
+        border: 1px solid #c3c3c3!important;
+    }
+    .report-title{
+        font-weight: 600!important;
+    }   
+</style>

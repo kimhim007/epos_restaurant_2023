@@ -1,0 +1,307 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:pos_menu_id",
+ "creation": "2023-01-07 00:28:51.666070",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pos_menu",
+  "product_code",
+  "product_name_en",
+  "product_name_kh",
+  "revenue_group",
+  "unit",
+  "price",
+  "kitchen_group",
+  "allow_discount",
+  "allow_free",
+  "allow_change_price",
+  "is_inventory_product",
+  "is_open_product",
+  "append_quantity",
+  "is_require_employee",
+  "sort_order",
+  "printers",
+  "prices",
+  "modifiers",
+  "photo",
+  "is_combo_menu",
+  "use_combo_group",
+  "combo_menu_data",
+  "combo_group_data",
+  "tax_rule",
+  "tax_rule_data",
+  "pos_menu_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "pos_menu",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "POS Menu"
+  },
+  {
+   "fieldname": "product_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Product Code",
+   "options": "Product"
+  },
+  {
+   "fetch_from": "product_code.product_name_en",
+   "fetch_if_empty": 1,
+   "fieldname": "product_name_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Product Name En"
+  },
+  {
+   "fetch_from": "product_code.product_name_kh",
+   "fetch_if_empty": 1,
+   "fieldname": "product_name_kh",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Product Name Kh"
+  },
+  {
+   "fetch_from": "product_code.unit",
+   "fetch_if_empty": 1,
+   "fieldname": "unit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unit"
+  },
+  {
+   "fetch_from": "product_code.price",
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fetch_from": "product_code.kitchen_group",
+   "fieldname": "kitchen_group",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Kitchen Group"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.allow_discount",
+   "fieldname": "allow_discount",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Allow Discount"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.allow_free",
+   "fieldname": "allow_free",
+   "fieldtype": "Check",
+   "label": "Allow Free"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.allow_change_price",
+   "fieldname": "allow_change_price",
+   "fieldtype": "Check",
+   "label": "Allow Change Price"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.is_open_product",
+   "fieldname": "is_open_product",
+   "fieldtype": "Check",
+   "label": "Is Open Product"
+  },
+  {
+   "fieldname": "printers",
+   "fieldtype": "JSON",
+   "label": "Printers"
+  },
+  {
+   "fieldname": "prices",
+   "fieldtype": "JSON",
+   "label": "Prices"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.is_inventory_product",
+   "fieldname": "is_inventory_product",
+   "fieldtype": "Check",
+   "label": "Is Inventory Product"
+  },
+  {
+   "fetch_from": "product_code.photo",
+   "fieldname": "photo",
+   "fieldtype": "Data",
+   "label": "photo"
+  },
+  {
+   "fieldname": "modifiers",
+   "fieldtype": "JSON",
+   "label": "Modifiers"
+  },
+  {
+   "default": "1",
+   "fetch_from": "product_code.append_quantity",
+   "fieldname": "append_quantity",
+   "fieldtype": "Check",
+   "label": "Append Quantity"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.is_combo_menu",
+   "fieldname": "is_combo_menu",
+   "fieldtype": "Check",
+   "label": "Is Combo Menu"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.use_combo_group",
+   "fieldname": "use_combo_group",
+   "fieldtype": "Check",
+   "label": "Use Combo Group"
+  },
+  {
+   "fetch_from": "product_code.tax_rule",
+   "fieldname": "tax_rule",
+   "fieldtype": "Link",
+   "label": "Tax Rule",
+   "options": "Tax Rule"
+  },
+  {
+   "fetch_from": "tax_rule.tax_rule_data",
+   "fieldname": "tax_rule_data",
+   "fieldtype": "JSON",
+   "label": "Tax Rule Data"
+  },
+  {
+   "fetch_from": "product_code.combo_menu_data",
+   "fetch_if_empty": 1,
+   "fieldname": "combo_menu_data",
+   "fieldtype": "JSON",
+   "label": "Combo Menu Data"
+  },
+  {
+   "fetch_from": "product_code.combo_group_data",
+   "fetch_if_empty": 1,
+   "fieldname": "combo_group_data",
+   "fieldtype": "JSON",
+   "label": "Combo Group Data"
+  },
+  {
+   "fieldname": "pos_menu_id",
+   "fieldtype": "Data",
+   "label": "pos_menu_id",
+   "unique": 1
+  },
+  {
+   "fetch_from": "product_code.sort_order",
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order"
+  },
+  {
+   "fieldname": "revenue_group",
+   "fieldtype": "Data",
+   "label": "Revenue Group"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_code.is_require_employee",
+   "fieldname": "is_require_employee",
+   "fieldtype": "Check",
+   "label": "Is Require Employee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-04 17:28:33.029521",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "Temp Product Menu",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

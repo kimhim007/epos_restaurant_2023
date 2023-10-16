@@ -1,0 +1,878 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-12-05 16:43:28.070749",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "photo",
+  "naming_series",
+  "custom_bill_number",
+  "posting_date",
+  "reference_number",
+  "pos_profile",
+  "customer",
+  "customer_name",
+  "customer_photo",
+  "phone_number",
+  "customer_group",
+  "column_break_6",
+  "business_branch",
+  "outlet",
+  "stock_location",
+  "table_id",
+  "tbl_number",
+  "tbl_group",
+  "card",
+  "column_break_9",
+  "working_day",
+  "cashier_shift",
+  "shift_name",
+  "price_rule",
+  "sale_quotation",
+  "section_break_6",
+  "scan_barcode",
+  "column_break_14",
+  "append_quantity",
+  "section_break_7",
+  "sale_products",
+  "section_break_8",
+  "total_quantity",
+  "discount_type",
+  "discount",
+  "sale_discountable_amount",
+  "column_break_26",
+  "sub_total",
+  "product_discount",
+  "sale_discount",
+  "column_break_35",
+  "total_discount",
+  "discount_note",
+  "total_tax",
+  "tip_amount",
+  "column_break_10",
+  "grand_total",
+  "total_fee",
+  "total_paid",
+  "total_paid_with_fee",
+  "balance",
+  "changed_amount",
+  "section_break_43",
+  "created_by",
+  "pos_station_name",
+  "column_break_45",
+  "closed_by",
+  "closed_date",
+  "payments_tab",
+  "payment",
+  "tax_tab",
+  "tax_rule",
+  "section_break_44",
+  "tax_1_rate",
+  "percentage_of_price_to_calculate_tax_1",
+  "column_break_46",
+  "taxable_amount_1",
+  "column_break_48",
+  "tax_1_amount",
+  "tax_2_section",
+  "tax_2_rate",
+  "percentage_of_price_to_calculate_tax_2",
+  "column_break_55",
+  "taxable_amount_2",
+  "column_break_57",
+  "tax_2_amount",
+  "tax_3_section",
+  "tax_3_rate",
+  "percentage_of_price_to_calculate_tax_3",
+  "column_break_64",
+  "taxable_amount_3",
+  "column_break_66",
+  "tax_3_amount",
+  "section_break_75",
+  "change_tax_setting_note",
+  "commission_section",
+  "agent_name",
+  "column_break_93",
+  "agent_phone_number",
+  "section_break_95",
+  "commission",
+  "column_break_97",
+  "commission_type",
+  "section_break_99",
+  "commission_amount",
+  "commission_note",
+  "note_tab",
+  "amended_from",
+  "total_cost",
+  "column_break_75",
+  "profit",
+  "section_break_74",
+  "sale_type",
+  "sale_type_color",
+  "guest_cover",
+  "sale_status",
+  "sale_status_color",
+  "sale_status_priority",
+  "column_break_36",
+  "exchange_rate",
+  "note",
+  "is_foc",
+  "seat_number",
+  "waiting_number_prefix",
+  "waiting_number",
+  "inventory_transacton_tab",
+  "inventory_transaction"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Document Number",
+   "options": "SO.YYYY.-.####",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name_en",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_global_search": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sale",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sale_products",
+   "fieldtype": "Table",
+   "label": "Sale Product",
+   "options": "Sale Product"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Photo"
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "fieldname": "note_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sub_total",
+   "fieldtype": "Currency",
+   "label": "Sub Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "label": "Total Discount",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "Total Paid",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "append_quantity",
+   "fieldtype": "Check",
+   "label": "Append Quantity"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "pos_profile.business_branch",
+   "fetch_if_empty": 1,
+   "fieldname": "business_branch",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Business Branch",
+   "options": "Business Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "working_day",
+   "fieldtype": "Link",
+   "label": "Working Day",
+   "options": "Working Day"
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Cashier Shift",
+   "options": "Cashier Shift"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "pos_profile.outlet",
+   "fetch_if_empty": 1,
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "label": "Outlet",
+   "options": "Outlet",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pos_profile",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "POS Profile",
+   "options": "POS Profile"
+  },
+  {
+   "fieldname": "pos_station_name",
+   "fieldtype": "Data",
+   "label": "POS Station Name"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Percent",
+   "fieldname": "discount_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Discount Type",
+   "options": "Percent\nAmount"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_discount",
+   "fieldtype": "Currency",
+   "label": "Product Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sale_discount",
+   "fieldtype": "Currency",
+   "label": "Sale Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sale_discountable_amount",
+   "fieldtype": "Currency",
+   "label": "Sale Discountable Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "pos_profile.price_rule",
+   "fetch_if_empty": 1,
+   "fieldname": "price_rule",
+   "fieldtype": "Link",
+   "label": "Price Rule",
+   "options": "Price Rule"
+  },
+  {
+   "fieldname": "table_id",
+   "fieldtype": "Link",
+   "label": "Table",
+   "options": "Tables Number"
+  },
+  {
+   "fetch_from": "table_id.tbl_group",
+   "fieldname": "tbl_group",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Table Group"
+  },
+  {
+   "fetch_from": "table_id.tbl_number",
+   "fieldname": "tbl_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Table Number"
+  },
+  {
+   "fieldname": "payment",
+   "fieldtype": "Table",
+   "label": "Payment",
+   "options": "POS Sale Payment"
+  },
+  {
+   "fetch_from": "pos_profile.stock_location",
+   "fetch_if_empty": 1,
+   "fieldname": "stock_location",
+   "fieldtype": "Link",
+   "label": "Stock Location",
+   "options": "Stock Location",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_group",
+   "fieldname": "customer_group",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Customer Group"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost"
+  },
+  {
+   "default": "0",
+   "fieldname": "profit",
+   "fieldtype": "Currency",
+   "label": "Profit",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_tax",
+   "fieldtype": "Currency",
+   "label": "Total Tax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "label": "Created By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tax"
+  },
+  {
+   "fetch_from": "pos_profile.tax_rule",
+   "fetch_if_empty": 1,
+   "fieldname": "tax_rule",
+   "fieldtype": "Link",
+   "label": "Tax Rule",
+   "options": "Tax Rule"
+  },
+  {
+   "fieldname": "section_break_44",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "tax_rule.tax_1_rate",
+   "fieldname": "tax_1_rate",
+   "fieldtype": "Float",
+   "label": "Tax 1 Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_2_section",
+   "fieldtype": "Section Break",
+   "label": "Tax 2"
+  },
+  {
+   "fetch_from": "tax_rule.tax_2_rate",
+   "fieldname": "tax_2_rate",
+   "fieldtype": "Float",
+   "label": "Tax 2 Rate"
+  },
+  {
+   "fieldname": "tax_3_section",
+   "fieldtype": "Section Break",
+   "label": "Tax 3"
+  },
+  {
+   "fetch_from": "tax_rule.tax_3_rate",
+   "fieldname": "tax_3_rate",
+   "fieldtype": "Float",
+   "label": "Tax 3 Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable_amount_1",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount 1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_1_amount",
+   "fieldtype": "Currency",
+   "label": "Tax 1 Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_46",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_48",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_55",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable_amount_2",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount 2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_57",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_2_amount",
+   "fieldtype": "Currency",
+   "label": "Tax 2 Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_64",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable_amount_3",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount 3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_66",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_3_amount",
+   "fieldtype": "Currency",
+   "label": "Tax 3 Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "section_break_43",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "changed_amount",
+   "fieldtype": "Currency",
+   "label": "Changed Amount",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "sale_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sale Type",
+   "options": "Sale Type"
+  },
+  {
+   "fieldname": "column_break_75",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_74",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sale_quotation",
+   "fieldtype": "Link",
+   "label": "Sale Quotation",
+   "options": "Sale Quotation"
+  },
+  {
+   "fieldname": "sale_status",
+   "fieldtype": "Link",
+   "label": "Sale Status",
+   "options": "Sale Status"
+  },
+  {
+   "fetch_from": "sale_status.background_color",
+   "fieldname": "sale_status_color",
+   "fieldtype": "Data",
+   "label": "Sale Status Color"
+  },
+  {
+   "default": "0",
+   "fieldname": "guest_cover",
+   "fieldtype": "Int",
+   "label": "Guest Cover"
+  },
+  {
+   "default": "0",
+   "fetch_from": "sale_status.priority",
+   "fieldname": "sale_status_priority",
+   "fieldtype": "Int",
+   "label": "Sale Status Priority"
+  },
+  {
+   "default": "1",
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "precision": "9"
+  },
+  {
+   "fetch_from": "customer.photo",
+   "fieldname": "customer_photo",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Customer Photo"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_foc",
+   "fieldtype": "Check",
+   "label": "Is Foc"
+  },
+  {
+   "fetch_from": "sale_type.color",
+   "fieldname": "sale_type_color",
+   "fieldtype": "Data",
+   "label": "Sale Type Color"
+  },
+  {
+   "fieldname": "seat_number",
+   "fieldtype": "Int",
+   "label": "Seat Number"
+  },
+  {
+   "fieldname": "closed_by",
+   "fieldtype": "Data",
+   "label": "Closed By"
+  },
+  {
+   "fetch_from": "pos_profile.waiting_number_prefix",
+   "fieldname": "waiting_number_prefix",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Waiting Number Prefix"
+  },
+  {
+   "fieldname": "waiting_number",
+   "fieldtype": "Data",
+   "label": "Waiting Number"
+  },
+  {
+   "fieldname": "commission_section",
+   "fieldtype": "Tab Break",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name"
+  },
+  {
+   "fieldname": "column_break_93",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "agent_phone_number",
+   "fieldtype": "Data",
+   "label": "Agent Phone Number"
+  },
+  {
+   "fieldname": "section_break_95",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Percent",
+   "fieldname": "commission_type",
+   "fieldtype": "Select",
+   "label": "Commission Type",
+   "options": "Percent\nAmount"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Float",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_97",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_99",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "commission_note",
+   "fieldtype": "Small Text",
+   "label": "Commission Note"
+  },
+  {
+   "depends_on": "eval:doc.docstatus!=0",
+   "fieldname": "inventory_transacton_tab",
+   "fieldtype": "Tab Break",
+   "label": "Inventory Transacton"
+  },
+  {
+   "default": "Sale Inventory Transaction",
+   "fieldname": "inventory_transaction",
+   "fieldtype": "HTML",
+   "label": "Inventory Product Include in this Sale Invoice",
+   "options": "<div id=\"inventory_transaction\">Inventory Product Include in this Sale Invoice</div>"
+  },
+  {
+   "fieldname": "percentage_of_price_to_calculate_tax_1",
+   "fieldtype": "Float",
+   "label": "Percentage of Price to Calculate Tax 1"
+  },
+  {
+   "fieldname": "percentage_of_price_to_calculate_tax_2",
+   "fieldtype": "Float",
+   "label": "Percentage of Price to Calculate Tax 2"
+  },
+  {
+   "fieldname": "percentage_of_price_to_calculate_tax_3",
+   "fieldtype": "Float",
+   "label": "Percentage of Price to Calculate Tax 3"
+  },
+  {
+   "fieldname": "change_tax_setting_note",
+   "fieldtype": "Small Text",
+   "label": "Change Tax Setting Note"
+  },
+  {
+   "fieldname": "section_break_75",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discount_note",
+   "fieldtype": "Data",
+   "label": "Discount Note"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference #"
+  },
+  {
+   "fieldname": "closed_date",
+   "fieldtype": "Datetime",
+   "label": "Closed Date"
+  },
+  {
+   "fieldname": "shift_name",
+   "fieldtype": "Data",
+   "label": "Shift Name"
+  },
+  {
+   "fieldname": "card",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Card"
+  },
+  {
+   "fieldname": "custom_bill_number",
+   "fieldtype": "Data",
+   "label": "Bill Number"
+  },
+  {
+   "fieldname": "total_fee",
+   "fieldtype": "Currency",
+   "label": "Total Fee"
+  },
+  {
+   "fieldname": "total_paid_with_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Paid",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tip_amount",
+   "fieldtype": "Currency",
+   "label": "Tip Amount"
+  }
+ ],
+ "image_field": "photo",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Payment",
+   "link_doctype": "Sale Payment",
+   "link_fieldname": "sale"
+  }
+ ],
+ "modified": "2023-09-12 13:47:30.070054",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "Sale",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer_name, phone_number",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Red",
+   "title": "Testing"
+  }
+ ],
+ "track_changes": 1
+}

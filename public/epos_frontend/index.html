@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/frappe/images/front-favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family:"Kh Battambang";
+      }
+      .overlay {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgb(143, 15, 15);
+}
+
+.overlay__inner {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.overlay__content {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    border-width:3px;
+    border-color: rgba(255, 255, 255, 0.05);
+    border-top-color: #fff;
+    animation: spin 1s infinite linear;
+    border-radius: 100%;
+    border-style: solid;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+    </style>
+    <title>EPOS</title>
+    <script type="module" crossorigin src="/assets/epos_restaurant_2023/epos_frontend/assets/index-d4506b92.js"></script>
+    <link rel="stylesheet" href="/assets/epos_restaurant_2023/epos_frontend/assets/index-0e18fb42.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="overlay">
+        <div class="overlay__inner">
+            <div class="overlay__content"><span class="spinner"></span></div>
+        </div>
+    </div>
+    </div>
+		<script>window.csrf_token = '{{ csrf_token }}';</script>
+    
+  </body>
+</html>
